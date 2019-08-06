@@ -14,9 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard',function(){
+Route::resource('dashboard', 'DashboardController');
+/* Route::get('/dashboard',function(){
     return view('dashboard');
-});
+}); */
 
 Route::resource('posts','PostController');
 Route::resource('abouts','AboutController');
