@@ -14,6 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
+        $messages = Contact::orderBy('created_at','desc')->paginate(10);
+        return view('contacts.index',compact('messages'));
         //
     }
 
@@ -35,6 +37,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required|min:3',
+            'email' => 'required|min:6',
+            'phone' => 'min:7',
+            'content' => 'required|min:10'
+        ]);
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'content' => $request->content
+        ]);
+        return redirect()->back();
         //
     }
 
