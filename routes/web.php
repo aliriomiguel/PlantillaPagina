@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::resource('/', 'WelcomeController');
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 Route::resource('dashboard', 'DashboardController');
 /* Route::get('/dashboard',function(){
     return view('dashboard');
