@@ -93,7 +93,34 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <br>
+                <div class="col-lg-8 mx-auto">
+                    <form action="{{route('contacts.store')}}"  method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="phone" name="phone" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Text</label>
+                            <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-info"><i class="fas fa-envelope"></i> Send</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
+        
     </body>
 </html>
