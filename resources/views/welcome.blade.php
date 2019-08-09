@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Alirio CV</title>
+        <title>Landing Page</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -112,7 +112,7 @@
                     <img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">
                 
                     <!-- Masthead Heading -->
-                    <h1 class="masthead-heading text-uppercase mb-0">Alirio Aranguren</h1>
+                    <h1 class="masthead-heading text-uppercase mb-0">Landing Page Contact Example</h1>
                 
                     <!-- Icon Divider -->
                     <div class="divider-custom divider-light">
@@ -132,6 +132,33 @@
             <section class="page-section portfolio" id="portfolio">
                 <div class="container">
                     
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="content text-center">
+                    <form action="{{route('contacts.store')}}"  method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="phone" name="phone" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Text</label>
+                            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-info"><i class="fas fa-envelope"></i> Send</button>
+                        </div>
+                    </form>
                 </div>
             </section>
 

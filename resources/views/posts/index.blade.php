@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @if($errors->all())
     <div class="alert alert-danger">
         @foreach ($errors->all() as $error)
@@ -18,13 +19,25 @@
         {{-- @foreach ($posts as $post) --}}
         <div class="card mt-4">
             <div class="card-body">
-                <table class="table table-striped text-nowrap table-responsive-lg">
+                <table class="table table-striped text-nowrap table-responsive">
                     <thead>
                         <tr>
-                            <th class="align-text-table">
+                            <th>
                                 Title
                             </th>
-                            <th class="align-text-table">
+                            <th>
+                                Author
+                            </th>
+                            <th>
+                                Publisher
+                            </th>
+                            <th>
+                                Category
+                            </th>
+                            <th>
+                                Show on Landing Page
+                            </th>
+                            <th>
                                 Actions
                             </th>
                         </tr>
@@ -36,6 +49,40 @@
                                     <a href="{{route('posts.show', $post->id)}}">
                                         {{$post->title}}    
                                     </a>
+                                </td>
+                                <td>
+                                    @if($post->author)
+                                        {{$post->author}}
+                                    @else
+                                        N/A
+                                    @endif        
+                                </td>
+                                <td>
+                                    @if($post->user_id)
+                                    {{$post->user->name}}
+                                    @else
+                                        N/A
+                                    @endif    
+                                </td>
+                                <td>
+                                    @if($post->category_id)
+                                    {{$post->category->name}}
+                                    @else
+                                    N/A
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($post->featured > 0)   
+                                        <div class="custom-control custom-switch">
+                                            <input checked type="checkbox" class="custom-control-input" id="switch{{$post->id}}" onchange="featured({{$post->id}},this)">
+                                            <label class="custom-control-label" for="switch{{$post->id}}"></label>
+                                        </div>
+                                    @else
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="switch{{$post->id}}" onchange="featured({{$post->id}},this)">
+                                            <label class="custom-control-label" for="switch{{$post->id}}"></label>
+                                        </div>
+                                    @endif    
                                 </td>
                                 <td>
                                     <a href="{{route('posts.edit', $post->id)}}" class="btn btn-info">Edit</a>

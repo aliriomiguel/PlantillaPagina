@@ -92,6 +92,28 @@ class AboutController extends Controller
         //
     }
 
+    public function showLanding($id){
+        $about = About::find($id);
+
+        $about->active_text = 1;
+        $saved = $about->save();
+
+        return response()->json([
+            'success' => $saved
+        ]);
+    }
+
+    public function hideLanding($id){
+        $about = About::find($id);
+
+        $about->active_text = 0;
+        $saved = $about->save();
+
+        return response()->json([
+            'success' => $saved
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

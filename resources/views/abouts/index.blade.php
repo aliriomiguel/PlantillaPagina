@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @if($errors->all())
     <div class="alert alert-danger">
         @foreach ($errors->all() as $error)
@@ -41,7 +42,17 @@
                                 </a>
                             </td>
                             <td>
-                                <input type="checkbox" name="active_text" id="active_text">
+                                @if($about->active_text > 0)   
+                                    <div class="custom-control custom-switch">
+                                        <input checked type="checkbox" class="custom-control-input" id="switch-about{{$about->id}}" onchange="show_active({{$about->id}},this)">
+                                        <label class="custom-control-label" for="switch-about{{$about->id}}"></label>
+                                    </div>
+                                @else
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="switch-about{{$about->id}}" onchange="show_active({{$about->id}},this)">
+                                        <label class="custom-control-label" for="switch-about{{$about->id}}"></label>
+                                    </div>
+                                @endif    
                             </td>
                             <td>
                                 <a href="{{route('abouts.edit', $about->id)}}" class="btn btn-info">Edit</a>

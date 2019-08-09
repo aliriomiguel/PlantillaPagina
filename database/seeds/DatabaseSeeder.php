@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Post;
 use App\About;
+use App\User;
+use App\Quotes;
+use App\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        factory(Post::class, 60)->create();
-        factory(About::class, 70)->create();
+        factory(User::class, 5)->create();
+        factory(Category::class, 10)->create();
+        factory(Post::class, 30)->create();
+        factory(About::class, 30)->create();
+        factory(Quotes::class, 30)->create();
     }
 }

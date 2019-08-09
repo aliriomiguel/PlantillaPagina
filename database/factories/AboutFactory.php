@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(About::class, function (Faker $faker) {
     return [
-        'about' => $faker->paragraph(6),
-        'active_text' => $faker->randomDigit(1)
+        'about' => $faker->paragraph(5),
+        'active_text' => $faker->randomDigitNotNull
         //
     ];
 });
