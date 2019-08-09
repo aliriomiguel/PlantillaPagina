@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Landing Page</title>
+        <title>Alirio CV</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -112,7 +112,7 @@
                     <img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">
                 
                     <!-- Masthead Heading -->
-                    <h1 class="masthead-heading text-uppercase mb-0">Landing Page Contact Example</h1>
+                    <h1 class="masthead-heading text-uppercase mb-0">Alirio Aranguren</h1>
                 
                     <!-- Icon Divider -->
                     <div class="divider-custom divider-light">
@@ -136,7 +136,7 @@
             </section>
 
             <section id="contact">
-                <div class="content text-center">
+                <div class="content col-lg-8 mx-auto">
                     <form action="{{route('contacts.store')}}"  method="post">
                         @csrf
                         <div class="form-group">
@@ -153,7 +153,7 @@
                         </div>
                         <div class="form-group">
                             <label for="content">Text</label>
-                            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                            <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-outline-info"><i class="fas fa-envelope"></i> Send</button>

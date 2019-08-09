@@ -34,7 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', compact('categories'));
         //
     }
 
@@ -48,11 +49,17 @@ class PostController extends Controller
     {
         $this->validate($request,[
             'title' => 'required|min:3',
-            'content' => 'required|min:10'
+            'content' => 'required|min:10',
+            'author' => 'min:3',
+            'category' => 'required'
         ]);
         Post::create([
             'title' => $request->title,
-            'content' => $request->content
+            'content' => $request->content,
+            'author' => $request->author,
+            'featured' => 0,
+            'category_id' => $request->category,
+            'user_id' => auth()->user()->id
         ]);
         return redirect(route('posts.index'));
         //
