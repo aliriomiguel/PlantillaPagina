@@ -42,3 +42,7 @@ html,body{
     -ms-user-select: none;
     user-select: none;
 }
+
+.bg-otk {
+    background-color: #13384B!important;
+}

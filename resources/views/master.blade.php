@@ -15,22 +15,22 @@
 </head>
 <body>
     {{-- Menu --}}
-    <div class="bg-info text-white p-5 mb-3">
-            <nav class="navbar navbar-expand-lg bg-info text-white">
-                <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="bg-otk text-white p-5 mb-3">
+            <nav class="navbar navbar-expand-lg bg-otk text-white">
+                <button class="navbar-toggler navbar-light bg-light bg-otk" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"></span>
                 </button>
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item p-1">
-                            <a href="/" class="btn btn-secondary btn-sm">Landing Page</a>
+                            <a href="/" class="btn btn-secondary btn-sm bg-otk">Landing Page</a>
                         </li>
                         <li class="nav-item p-1">
-                            <a href="{{route('dashboard.index')}}" class="btn btn-secondary btn-sm"><i class="fas fa-home"></i></a>
+                            <a href="{{route('dashboard.index')}}" class="btn btn-secondary btn-sm bg-otk"><i class="fas fa-home"></i></a>
                         </li>
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Posts
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,7 +41,7 @@
                         </li>
 
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Categories
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@
                         </li>
 
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             About Texts
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -61,7 +61,7 @@
                         </li>
 
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Services
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Portfolio
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -81,7 +81,7 @@
                         </li>
 
                         <li class="nav-item p-1 dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle bg-otk" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Quotes
                             </button>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -90,17 +90,17 @@
                             </div>
                         </li>
                         <li class="nav-item p-1">
-                            <a href="{{route('contacts.index')}}" class="btn btn-secondary btn-sm"><i class="fas fa-envelope"></i></a>
+                            <a href="{{route('contacts.index')}}" class="btn btn-secondary btn-sm bg-otk"><i class="fas fa-envelope"></i></a>
                         </li>
                         
                     </ul>
                     @auth
                     <form class="d-inline-block float-right" action="{{route('logout')}}" method="post">
                         @csrf
-                        <a style="font-size: 13px;">Logged as {{auth()->user()->name}}</a> | <button class="btn btn-sm btn-secondary">Logout</button>
+                        <a style="font-size: 13px;">Logged as {{auth()->user()->name}}</a> | <button class="btn btn-sm btn-secondary bg-otk">Logout</button>
                     </form>
                     @else
-                    <a href="{{route('login')}}" class="btn btn-secondary d-inline-block float-right">Login</a>
+                    <a href="{{route('login')}}" class="btn btn-secondary d-inline-block float-right bg-otk">Login</a>
                     @endauth
                 </div>
             </nav>
