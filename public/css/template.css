@@ -16,10 +16,13 @@ html,body{
     padding-bottom: 240px;
 }
 #footer{
-    position: relative;
-    height:150px;
+    z-index: 1;
+    left: 0;
+    bottom: 0px;
+    position: fixed;
+    height:60px;
     clear:both;
-    width: 100%;   
+    width: 100%;  
 }
 .avatar{
     width: 2rem;

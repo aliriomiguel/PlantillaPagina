@@ -64,7 +64,7 @@
                 </table>
             </div>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 justify-content-center">
             {{$contacts->links()}}
         </div>
 @endsection
